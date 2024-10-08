@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue
+endpoint_name: ig-classifier-endpoint
+model: azureml:ig-classifier:1
+code_configuration:
+  code: ./model/onlinescoring/
+  scoring_script: score.py
+environment: azureml:ig-classifier-env:1
+instance_type: Standard_D2as_v4
+instance_count: 1
